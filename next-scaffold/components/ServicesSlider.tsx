@@ -215,10 +215,3 @@ export default function ServicesSlider() {
     </section>
   );
 }
-            );
-          })}
-        </AnimatePresence>
-      </div>
-    </section>
-  );
-}

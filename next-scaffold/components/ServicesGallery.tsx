@@ -4,26 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
-const listContainerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.18,
-    },
-  },
-};
-
-const listItemVariants = {
-  hidden: { opacity: 0, y: 12 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.35, ease: "easeOut" },
-  },
-};
-
 const servicesData = [
   {
     id: 1,
@@ -102,83 +82,158 @@ const servicesData = [
 
 export default function ServicesGallery() {
   return (
-    <section id="services" className="px-4 pb-16 sm:px-6 lg:px-10">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10">
-          <div>
-            <h2 className="text-3xl font-bold tracking-wide text-white sm:text-4xl">Services Gallery</h2>
-            <p className="mt-3 max-w-3xl text-slate-300">
-              Visual service highlights with integrated execution capabilities across technical,
-              civil, and fit-out domains.
-            </p>
-          </div>
-        </div>
+    <section id="services" className="relative w-full bg-slate-50 py-24 lg:py-32 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-blue-100/40 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-cyan-100/30 blur-[100px]" />
 
-        <div>
-          {servicesData.map((service, index) => (
-            <article
-              key={service.id}
-              className="mb-16 grid w-full grid-cols-1 items-stretch gap-6 md:grid-cols-4"
-            >
-              <motion.div
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: -30 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.05 }}
-                className="md:col-span-1"
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" as const }}
+          className="mb-20 text-center"
+        >
+          <span className="inline-block rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700 tracking-wide uppercase mb-6">
+            What We Do
+          </span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6">
+            Our <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Services</span>
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-slate-500 leading-relaxed">
+            End-to-end execution across technical, civil, and fit-out domains
+            with uncompromising quality standards.
+          </p>
+        </motion.div>
+
+        {/* Services List */}
+        <div className="space-y-28 lg:space-y-36">
+          {servicesData.map((service, index) => {
+            const isEven = index % 2 === 0;
+            const [firstWord, ...restWords] = service.title.split(" ");
+            const restTitle = restWords.join(" ");
+
+            return (
+              <article
+                key={service.id}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
+                  !isEven ? "lg:[direction:rtl]" : ""
+                }`}
               >
+                {/* Image Column */}
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="relative h-125 w-full overflow-hidden rounded-3xl shadow-2xl"
+                  initial={{
+                    opacity: 0,
+                    x: isEven ? -60 : 60,
+                  }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.7,
+                    ease: "easeOut" as const,
+                  }}
+                  className="lg:[direction:ltr]"
                 >
-                  <Image
-                    src={service.imagePath}
-                    alt={service.title}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/55 via-transparent to-transparent" />
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -4 }}
+                    transition={{ duration: 0.4, ease: "easeOut" as const }}
+                    className="relative w-full aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/10 group"
+                  >
+                    <Image
+                      src={service.imagePath}
+                      alt={service.title}
+                      fill
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    {/* Gradient overlay */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
+
+                    {/* Floating label on image */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <span className="inline-block rounded-xl bg-white/90 backdrop-blur-sm px-4 py-2 text-sm font-bold text-slate-900 shadow-lg">
+                        0{service.id} — {service.title}
+                      </span>
+                    </div>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
 
-              <motion.div
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: 50 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ type: "spring", stiffness: 85, damping: 18, delay: 0.05 + index * 0.05 }}
-                className="flex flex-col justify-center py-8 pl-4 md:col-span-3 md:pl-12 lg:pl-20"
-              >
-                <h3 className="mb-6 bg-linear-to-r from-blue-400 to-cyan-300 bg-clip-text text-4xl font-extrabold text-transparent lg:text-5xl">
-                  {service.title}
-                </h3>
-
-                <p className="mb-10 max-w-4xl text-lg leading-relaxed text-slate-400">
-                  {service.description}
-                </p>
-
-                <motion.ul
-                  variants={listContainerVariants}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, amount: 0.25 }}
-                  className="grid grid-cols-1 gap-x-12 gap-y-5 lg:grid-cols-2"
+                {/* Content Column */}
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    x: isEven ? 60 : -60,
+                  }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.7,
+                    ease: "easeOut" as const,
+                    delay: 0.15,
+                  }}
+                  className="flex flex-col justify-center lg:[direction:ltr]"
                 >
-                  {service.items.map((item) => (
-                    <motion.li
-                      key={item}
-                      variants={listItemVariants}
-                      className="flex items-center gap-3 text-lg text-slate-200"
-                    >
-                      <CheckCircle2 size={18} className="shrink-0 text-cyan-300 drop-shadow-[0_0_8px_rgba(34,211,238,0.7)]" />
-                      <span>{item}</span>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </motion.div>
-            </article>
-          ))}
+                  {/* Service number */}
+                  <motion.span
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-7xl lg:text-8xl font-black text-blue-100 leading-none mb-4 select-none"
+                  >
+                    0{service.id}
+                  </motion.span>
+
+                  {/* Title */}
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                    <span className="text-blue-600">{firstWord}</span>{" "}
+                    <span>{restTitle}</span>
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-slate-500 text-lg leading-relaxed mb-8 max-w-xl">
+                    {service.description}
+                  </p>
+
+                  {/* List Items */}
+                  <motion.ul
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{
+                      hidden: { opacity: 0 },
+                      show: {
+                        opacity: 1,
+                        transition: {
+                          staggerChildren: 0.1,
+                          delayChildren: 0.3,
+                        },
+                      },
+                    }}
+                    className="space-y-4"
+                  >
+                    {service.items.map((item) => (
+                      <motion.li
+                        key={item}
+                        variants={{
+                          hidden: { opacity: 0, x: -20 },
+                          show: { opacity: 1, x: 0 },
+                        }}
+                        className="flex items-center gap-4 text-slate-700 font-medium text-base lg:text-lg"
+                      >
+                        <span className="flex shrink-0 items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-400 text-white rounded-full shadow-md shadow-blue-500/20">
+                          <CheckCircle2 size={16} />
+                        </span>
+                        <span>{item}</span>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </motion.div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
