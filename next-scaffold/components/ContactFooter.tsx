@@ -1,35 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Globe, Mail, MapPin, Phone } from "lucide-react";
 
-const contactCards = [
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    content: "Office No. 44 Tower - 3, Mazyad Mall, Abu Dhabi, U.A.E",
-    color: "from-blue-500 to-blue-600",
-  },
-  {
-    icon: Phone,
-    title: "Call Us",
-    content: "+971 52 717 2631\n+971 52 979 1619\n+971 50 945 2825",
-    color: "from-cyan-500 to-blue-500",
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    content: "info@globaltechnicalgmt.com\nglobaltechmagm@gmail.com",
-    color: "from-blue-600 to-indigo-600",
-  },
-  {
-    icon: Globe,
-    title: "Website",
-    content: "www.globaltechnicalgmt.com",
-    href: "https://www.google.com/search?q=www.globaltechnicalgmt.com",
-    color: "from-indigo-500 to-purple-500",
-  },
-];
+const linkClasses =
+  "text-slate-400 text-sm md:text-base leading-relaxed transition-colors hover:text-blue-400 hover:underline underline-offset-4";
 
 export default function ContactFooter() {
   return (
@@ -73,146 +48,91 @@ export default function ContactFooter() {
             </p>
           </motion.div>
 
-          {/* Main content grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-            {/* Contact Form — 3 columns */}
+          {/* Contact Cards — Full-width 4-column grid */}
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {/* Visit Us */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, ease: "easeOut" as const }}
-              className="lg:col-span-3"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
             >
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 lg:p-10 backdrop-blur-sm">
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="mb-2.5 block text-sm font-semibold text-slate-300 tracking-wide"
-                      >
-                        Your Name
-                      </label>
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="John Doe"
-                        className="w-full rounded-xl border border-white/10 bg-slate-800/60 px-4 py-3.5 text-slate-100 placeholder-slate-500 outline-none transition-all duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:bg-slate-800"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="mb-2.5 block text-sm font-semibold text-slate-300 tracking-wide"
-                      >
-                        Email Address
-                      </label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="john@company.com"
-                        className="w-full rounded-xl border border-white/10 bg-slate-800/60 px-4 py-3.5 text-slate-100 placeholder-slate-500 outline-none transition-all duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:bg-slate-800"
-                      />
-                    </div>
-                  </div>
+              <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-600/20 mb-4">
+                <MapPin size={24} />
+              </span>
+              <p className="text-xl font-bold text-white mb-3">Visit Us</p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Mazyad+Mall+Abu+Dhabi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClasses}
+              >
+                Office No. 44 Tower - 3, Mazyad Mall, Abu Dhabi, U.A.E
+              </a>
+            </motion.div>
 
-                  <div>
-                    <label
-                      htmlFor="service"
-                      className="mb-2.5 block text-sm font-semibold text-slate-300 tracking-wide"
-                    >
-                      Service Required
-                    </label>
-                    <input
-                      id="service"
-                      name="service"
-                      type="text"
-                      placeholder="e.g. Electrical maintenance, Civil works..."
-                      className="w-full rounded-xl border border-white/10 bg-slate-800/60 px-4 py-3.5 text-slate-100 placeholder-slate-500 outline-none transition-all duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:bg-slate-800"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="mb-2.5 block text-sm font-semibold text-slate-300 tracking-wide"
-                    >
-                      Project Details
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      placeholder="Tell us about your project requirements..."
-                      className="w-full rounded-xl border border-white/10 bg-slate-800/60 px-4 py-3.5 text-slate-100 placeholder-slate-500 outline-none transition-all duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:bg-slate-800 resize-none"
-                    />
-                  </div>
-
-                  <motion.button
-                    type="submit"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 text-base font-bold tracking-wide text-white shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_40px_rgba(37,99,235,0.6)]"
-                  >
-                    Send Message
-                    <Send size={18} />
-                  </motion.button>
-                </form>
+            {/* Call Us */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0.1 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
+            >
+              <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-600/20 mb-4">
+                <Phone size={24} />
+              </span>
+              <p className="text-xl font-bold text-white mb-3">Call Us</p>
+              <div className="flex flex-col items-center gap-1.5">
+                <a href="tel:+971527172631" className={linkClasses}>+971 52 717 2631</a>
+                <a href="tel:+971529791619" className={linkClasses}>+971 52 979 1619</a>
+                <a href="tel:+971509452825" className={linkClasses}>+971 50 945 2825</a>
               </div>
             </motion.div>
 
-            {/* Contact Cards — 2 columns */}
+            {/* Email Us */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, ease: "easeOut" as const }}
-              className="lg:col-span-2 space-y-5"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0.2 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
             >
-              {contactCards.map((card, i) => (
-                <motion.div
-                  key={card.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    ease: "easeOut" as const,
-                    delay: i * 0.1,
-                  }}
-                  whileHover={{ scale: 1.02, x: -4 }}
-                  className="group rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors duration-300 hover:border-blue-500/30 hover:bg-white/10"
-                >
-                  <div className="flex items-start gap-4">
-                    <span
-                      className={`flex shrink-0 items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br ${card.color} text-white shadow-lg`}
-                    >
-                      <card.icon size={20} />
-                    </span>
-                    <div>
-                      <p className="text-base font-bold text-white mb-1.5">
-                        {card.title}
-                      </p>
-                      {card.href ? (
-                        <a
-                          href={card.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-sm leading-relaxed text-slate-400 underline decoration-blue-500/40 underline-offset-4 transition-colors hover:text-blue-400"
-                        >
-                          {card.content}
-                        </a>
-                      ) : (
-                        <p className="text-sm leading-relaxed text-slate-400 whitespace-pre-line">
-                          {card.content}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+              <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-700/20 mb-4">
+                <Mail size={24} />
+              </span>
+              <p className="text-xl font-bold text-white mb-3">Email Us</p>
+              <div className="flex flex-col items-center gap-1.5">
+                <a href="https://mail.google.com/mail/?view=cm&to=info@globaltechnicalgmt.com" target="_blank" rel="noopener noreferrer" className={`${linkClasses} break-all`}>info@globaltechnicalgmt.com</a>
+                <a href="https://mail.google.com/mail/?view=cm&to=globaltechmagm@gmail.com" target="_blank" rel="noopener noreferrer" className={`${linkClasses} break-all`}>globaltechmagm@gmail.com</a>
+              </div>
+            </motion.div>
+
+            {/* Website */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0.3 }}
+              whileHover={{ y: -6 }}
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
+            >
+              <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-600/20 mb-4">
+                <Globe size={24} />
+              </span>
+              <p className="text-xl font-bold text-white mb-3">Website</p>
+              <a
+                href="https://www.google.com/search?q=www.globaltechnicalgmt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClasses}
+              >
+                www.globaltechnicalgmt.com
+              </a>
             </motion.div>
           </div>
 

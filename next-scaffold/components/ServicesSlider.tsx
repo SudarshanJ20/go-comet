@@ -206,6 +206,7 @@ export default function ServicesSlider() {
                   className="object-contain drop-shadow-[0_25px_35px_rgba(37,99,235,0.2)]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
+                  quality={100}
                 />
               </motion.div>
             );

@@ -10,7 +10,7 @@ export default function Hero() {
       {/* ─── Top Hero ─── */}
       <section
         id="hero"
-        className="relative w-full h-[80vh] min-h-[600px] flex items-center overflow-hidden"
+        className="relative w-full h-[80vh] min-h-[600px] flex items-center overflow-visible pb-16"
       >
         {/* Background Image */}
         <Image
@@ -19,6 +19,7 @@ export default function Hero() {
           alt="City skyline"
           className="object-cover object-center"
           sizes="100vw"
+          quality={100}
           priority
           style={{ zIndex: 0 }}
         />
@@ -30,20 +31,20 @@ export default function Hero() {
         />
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-6 w-full" style={{ zIndex: 2 }}>
+        <div className="relative w-full max-w-7xl mx-auto px-10 lg:px-[4.5rem]" style={{ zIndex: 2 }}>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="block text-blue-400 font-bold tracking-[0.2em] uppercase text-sm md:text-base mb-4 drop-shadow-md"
           >
             Global Technical General Maintenance &amp; Trading
           </motion.span>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="text-5xl lg:text-7xl font-black text-white tracking-tight mb-4"
           >
             Your Vision. Our Expertise.
@@ -52,7 +53,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             className="text-xl text-blue-200 mb-8 max-w-2xl font-light"
           >
             Delivering excellence in electronic, civil, and mechanical general
@@ -63,7 +64,7 @@ export default function Hero() {
             href="#contact"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] inline-flex items-center gap-2"
@@ -72,10 +73,38 @@ export default function Hero() {
             <ArrowRight size={18} />
           </motion.a>
         </div>
+
+        {/* ─── Floating Stats Bridge ─── */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+          className="absolute -bottom-12 left-0 right-0 max-w-6xl mx-auto px-6"
+          style={{ zIndex: 20 }}
+        >
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-6 lg:p-8 grid grid-cols-2 md:grid-cols-4 gap-4 divide-x divide-white/10">
+            <div className="flex flex-col items-center justify-center text-center px-4">
+              <span className="text-3xl font-bold text-white mb-1 drop-shadow-md">24/7</span>
+              <span className="text-sm text-slate-800 font-semibold uppercase tracking-wide">Active Support</span>
+            </div>
+            <div className="flex flex-col items-center justify-center text-center px-4">
+              <span className="text-3xl font-bold text-white mb-1 drop-shadow-md">100+</span>
+              <span className="text-sm text-slate-800 font-semibold uppercase tracking-wide">Projects Completed</span>
+            </div>
+            <div className="flex flex-col items-center justify-center text-center px-4">
+              <span className="text-3xl font-bold text-white mb-1 drop-shadow-md">Industrial</span>
+              <span className="text-sm text-slate-800 font-semibold uppercase tracking-wide">&amp; Residential</span>
+            </div>
+            <div className="flex flex-col items-center justify-center text-center px-4">
+              <span className="text-3xl font-bold text-white mb-1 drop-shadow-md">UAE</span>
+              <span className="text-sm text-slate-800 font-semibold uppercase tracking-wide">Wide Coverage</span>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* ─── White Info Band ─── */}
-      <section className="w-full bg-white py-16 lg:py-24">
+      <section className="w-full bg-white pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
@@ -110,6 +139,7 @@ export default function Hero() {
             alt="Field worker"
             className="object-cover object-top"
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={100}
           />
         </div>
 
