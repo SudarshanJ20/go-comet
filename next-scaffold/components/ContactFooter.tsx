@@ -31,7 +31,7 @@ export default function ContactFooter() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" as const }}
-            className="mb-16 text-center"
+            className="mb-10 md:mb-16 text-center"
           >
             <span className="inline-block rounded-full bg-blue-900/50 border border-blue-700/30 px-5 py-2 text-sm font-semibold text-blue-400 tracking-wide uppercase mb-6">
               Get In Touch
@@ -42,7 +42,7 @@ export default function ContactFooter() {
                 Together
               </span>
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-400 leading-relaxed">
+            <p className="mx-auto max-w-2xl text-base md:text-lg text-slate-400 leading-relaxed">
               Share your requirement and our team will get back to you with a
               tailored plan.
             </p>
@@ -57,12 +57,12 @@ export default function ContactFooter() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0 }}
               whileHover={{ y: -6 }}
-              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-5 md:p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
             >
               <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-600/20 mb-4">
                 <MapPin size={24} />
               </span>
-              <p className="text-xl font-bold text-white mb-3">Visit Us</p>
+              <p className="text-lg md:text-xl font-bold text-white mb-3">Visit Us</p>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Mazyad+Mall+Abu+Dhabi"
                 target="_blank"
@@ -80,12 +80,12 @@ export default function ContactFooter() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0.1 }}
               whileHover={{ y: -6 }}
-              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-5 md:p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
             >
               <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-600/20 mb-4">
                 <Phone size={24} />
               </span>
-              <p className="text-xl font-bold text-white mb-3">Call Us</p>
+              <p className="text-lg md:text-xl font-bold text-white mb-3">Call Us</p>
               <div className="flex flex-col items-center gap-1.5">
                 <a href="tel:+971527172631" className={linkClasses}>+971 52 717 2631</a>
                 <a href="tel:+971529791619" className={linkClasses}>+971 52 979 1619</a>
@@ -100,12 +100,12 @@ export default function ContactFooter() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0.2 }}
               whileHover={{ y: -6 }}
-              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-5 md:p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
             >
               <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-700/20 mb-4">
                 <Mail size={24} />
               </span>
-              <p className="text-xl font-bold text-white mb-3">Email Us</p>
+              <p className="text-lg md:text-xl font-bold text-white mb-3">Email Us</p>
               <div className="flex flex-col items-center gap-1.5">
                 <a href="https://mail.google.com/mail/?view=cm&to=info@globaltechnicalgmt.com" target="_blank" rel="noopener noreferrer" className={`${linkClasses} break-all`}>info@globaltechnicalgmt.com</a>
                 <a href="https://mail.google.com/mail/?view=cm&to=globaltechmagm@gmail.com" target="_blank" rel="noopener noreferrer" className={`${linkClasses} break-all`}>globaltechmagm@gmail.com</a>
@@ -119,12 +119,12 @@ export default function ContactFooter() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0.3 }}
               whileHover={{ y: -6 }}
-              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-5 md:p-8 rounded-2xl flex flex-col items-center text-center hover:bg-slate-800/50 transition-colors duration-300"
             >
               <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-600/20 mb-4">
                 <Globe size={24} />
               </span>
-              <p className="text-xl font-bold text-white mb-3">Website</p>
+              <p className="text-lg md:text-xl font-bold text-white mb-3">Website</p>
               <a
                 href="https://www.google.com/search?q=www.globaltechnicalgmt.com"
                 target="_blank"

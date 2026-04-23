@@ -31,7 +31,7 @@ export default function Hero() {
         />
 
         {/* Content */}
-        <div className="relative w-full max-w-7xl mx-auto px-10 lg:px-[4.5rem]" style={{ zIndex: 2 }}>
+        <div className="relative w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-[4.5rem]" style={{ zIndex: 2 }}>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="text-5xl lg:text-7xl font-black text-white tracking-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight mb-4"
           >
             Your Vision. Our Expertise.
           </motion.h1>
@@ -54,7 +54,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="text-xl text-blue-200 mb-8 max-w-2xl font-light"
+            className="text-base md:text-lg lg:text-xl text-blue-200 mb-8 max-w-2xl font-light"
           >
             Delivering excellence in electronic, civil, and mechanical general
             maintenance across the UAE.
@@ -67,7 +67,7 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] inline-flex items-center gap-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] inline-flex items-center gap-2 text-sm md:text-base"
           >
             Get a Quote
             <ArrowRight size={18} />
@@ -82,22 +82,22 @@ export default function Hero() {
           className="absolute -bottom-12 left-0 right-0 max-w-6xl mx-auto px-6"
           style={{ zIndex: 20 }}
         >
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-6 lg:p-8 grid grid-cols-2 md:grid-cols-4 gap-4 divide-x divide-white/10">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 divide-x divide-white/10">
             <div className="flex flex-col items-center justify-center text-center px-4">
-              <span className="text-3xl font-bold text-white mb-1 drop-shadow-md">24/7</span>
-              <span className="text-sm text-slate-800 font-semibold uppercase tracking-wide">Active Support</span>
+              <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">24/7</span>
+              <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">Active Support</span>
             </div>
             <div className="flex flex-col items-center justify-center text-center px-4">
-              <span className="text-3xl font-bold text-white mb-1 drop-shadow-md">100+</span>
-              <span className="text-sm text-slate-800 font-semibold uppercase tracking-wide">Projects Completed</span>
+              <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">100+</span>
+              <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">Projects Completed</span>
             </div>
             <div className="flex flex-col items-center justify-center text-center px-4">
-              <span className="text-3xl font-bold text-white mb-1 drop-shadow-md">Industrial</span>
-              <span className="text-sm text-slate-800 font-semibold uppercase tracking-wide">&amp; Residential</span>
+              <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">Industrial</span>
+              <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">&amp; Residential</span>
             </div>
             <div className="flex flex-col items-center justify-center text-center px-4">
-              <span className="text-3xl font-bold text-white mb-1 drop-shadow-md">UAE</span>
-              <span className="text-sm text-slate-800 font-semibold uppercase tracking-wide">Wide Coverage</span>
+              <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">UAE</span>
+              <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">Wide Coverage</span>
             </div>
           </div>
         </motion.div>
@@ -111,7 +111,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight"
           >
             Global reach, local impact.
           </motion.h2>
@@ -121,7 +121,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="text-lg text-slate-600 leading-relaxed border-l-4 border-blue-500 pl-6"
+            className="text-base md:text-lg text-slate-600 leading-relaxed border-l-4 border-blue-500 pl-6"
           >
             We are a leading technical and maintenance firm dedicated to building
             long-lasting infrastructure. With 24/7 availability, we help you
@@ -143,13 +143,13 @@ export default function Hero() {
           />
         </div>
 
-        <div className="bg-slate-900 p-12 lg:p-24 flex flex-col justify-center">
+        <div className="bg-slate-900 p-6 md:p-12 lg:p-24 flex flex-col justify-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-slate-300 text-lg leading-relaxed mb-8"
+            className="text-slate-300 text-base md:text-lg leading-relaxed mb-8"
           >
             From high-pressure pipelines to comprehensive civil works, our
             certified teams ensure every project meets the highest industrial

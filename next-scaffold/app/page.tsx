@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import Hero from "@/components/Hero";
 import ServicesGallery from "@/components/ServicesGallery";
 import ContactFooter from "@/components/ContactFooter";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +19,21 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on scroll
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isScrolled]);
+
+  const navLinkClasses =
+    "relative transition-colors duration-200 hover:text-blue-600 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full";
+
   return (
     <div className="relative flex min-h-screen flex-1 flex-col overflow-x-clip bg-white text-slate-900">
       <header
-        className={`fixed left-0 right-0 z-50 w-full flex justify-center transition-all duration-300 ease-in-out ${
+        className={`fixed left-0 right-0 z-50 w-full flex flex-col items-center transition-all duration-300 ease-in-out ${
           isScrolled ? "top-2 px-4" : "top-4 lg:top-8 px-4 lg:px-12"
         }`}
       >
@@ -29,7 +42,8 @@ export default function Home() {
             isScrolled ? "py-2" : "py-3"
           }`}
         >
-          <a href="#hero" className="flex items-center gap-4">
+          {/* Logo */}
+          <a href="#hero" className="flex items-center gap-3 md:gap-4">
             <div
               className={`relative rounded-full overflow-hidden border-2 border-white/20 shadow-lg transition-all duration-300 ${
                 isScrolled
@@ -49,34 +63,72 @@ export default function Home() {
             </div>
             <span
               className={`font-black uppercase tracking-[0.1em] text-slate-900 transition-all duration-300 ${
-                isScrolled ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+                isScrolled ? "text-base md:text-xl" : "text-lg md:text-2xl"
               }`}
             >
               GLOBAL TECHNICAL
             </span>
           </a>
 
-          <div className="flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-700 sm:text-base">
-            <a
-              className="relative transition-colors duration-200 hover:text-blue-600 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
-              href="#services"
-            >
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-700 sm:text-base">
+            <a className={navLinkClasses} href="#services">
               Services
             </a>
-            <a
-              className="relative transition-colors duration-200 hover:text-blue-600 after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
-              href="#contact"
-            >
+            <a className={navLinkClasses} href="#contact">
               Contact
             </a>
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700 hover:shadow-blue-600/40 hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700 hover:shadow-blue-600/40 hover:scale-105"
             >
               Get a Quote
             </a>
           </div>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            className="md:hidden p-2 text-slate-800 hover:text-blue-600 transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </nav>
+
+        {/* Mobile Dropdown Drawer */}
+        <div
+          className={`md:hidden w-full max-w-7xl mt-2 rounded-2xl bg-white/95 backdrop-blur-lg shadow-xl border border-slate-200/50 overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen
+              ? "max-h-80 opacity-100"
+              : "max-h-0 opacity-0 pointer-events-none"
+          }`}
+        >
+          <div className="flex flex-col gap-1 p-5">
+            <a
+              href="#services"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+            >
+              Contact
+            </a>
+            <div className="border-t border-slate-200 my-2" />
+            <a
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mx-4 text-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700"
+            >
+              Get a Quote
+            </a>
+          </div>
+        </div>
       </header>
 
       <main className="relative flex-1">

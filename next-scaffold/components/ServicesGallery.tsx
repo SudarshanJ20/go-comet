@@ -82,7 +82,7 @@ const servicesData = [
 
 export default function ServicesGallery() {
   return (
-    <section id="services" className="relative w-full bg-slate-50 py-24 lg:py-32 overflow-hidden">
+    <section id="services" className="relative w-full bg-slate-50 py-16 md:py-24 lg:py-32 overflow-hidden">
       {/* Decorative background elements */}
       <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-blue-100/40 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-cyan-100/30 blur-[100px]" />
@@ -102,14 +102,14 @@ export default function ServicesGallery() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6">
             Our <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-slate-500 leading-relaxed">
+          <p className="mx-auto max-w-2xl text-base md:text-lg text-slate-500 leading-relaxed">
             End-to-end execution across technical, civil, and fit-out domains
             with uncompromising quality standards.
           </p>
         </motion.div>
 
         {/* Services List */}
-        <div className="space-y-28 lg:space-y-36">
+        <div className="space-y-16 md:space-y-28 lg:space-y-36">
           {servicesData.map((service, index) => {
             const isEven = index % 2 === 0;
             const [firstWord, ...restWords] = service.title.split(" ");
@@ -118,9 +118,8 @@ export default function ServicesGallery() {
             return (
               <article
                 key={service.id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
-                  !isEven ? "lg:[direction:rtl]" : ""
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${!isEven ? "lg:[direction:rtl]" : ""
+                  }`}
               >
                 {/* Image Column */}
                 <motion.div
@@ -182,7 +181,7 @@ export default function ServicesGallery() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-7xl lg:text-8xl font-black text-blue-100 leading-none mb-4 select-none"
+                    className="text-5xl md:text-7xl lg:text-8xl font-black text-blue-100 leading-none mb-4 select-none"
                   >
                     0{service.id}
                   </motion.span>
@@ -194,7 +193,7 @@ export default function ServicesGallery() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-slate-500 text-lg leading-relaxed mb-8 max-w-xl">
+                  <p className="text-slate-500 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
                     {service.description}
                   </p>
 
