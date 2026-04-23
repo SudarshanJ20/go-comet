@@ -79,10 +79,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-          className="absolute -bottom-12 left-0 right-0 max-w-6xl mx-auto px-6"
+          className="absolute -bottom-24 lg:-bottom-12 left-0 right-0 max-w-6xl mx-auto px-6"
           style={{ zIndex: 20 }}
         >
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 divide-x divide-white/10">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 grid grid-cols-2 lg:grid-cols-4 gap-y-6 lg:gap-y-0 gap-x-3 md:gap-x-4 divide-x divide-white/10">
             <div className="flex flex-col items-center justify-center text-center px-4">
               <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">24/7</span>
               <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">Active Support</span>
