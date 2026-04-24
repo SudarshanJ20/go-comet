@@ -71,12 +71,6 @@ export default function Home() {
             <a className={navLinkClasses} href="#contact">
               Contact
             </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700 hover:shadow-blue-600/40 hover:scale-105"
-            >
-              Get a Quote
-            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -111,14 +105,6 @@ export default function Home() {
               className="px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
             >
               Contact
-            </a>
-            <div className="border-t border-slate-200 my-2" />
-            <a
-              href="#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="mx-4 text-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700"
-            >
-              Get a Quote
             </a>
           </div>
         </div>
