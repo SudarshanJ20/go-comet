@@ -65,11 +65,23 @@ export default function Home() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-700 sm:text-base">
-            <a className={navLinkClasses} href="#services">
+            {/* <a className={navLinkClasses} href="#services">
               Services
             </a>
             <a className={navLinkClasses} href="#contact">
               Contact
+            </a> */}
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700 hover:shadow-blue-600/40 hover:scale-105"
+            >
+              Services
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700 hover:shadow-blue-600/40 hover:scale-105"
+            >
+              Get a Quote
             </a>
           </div>
 
