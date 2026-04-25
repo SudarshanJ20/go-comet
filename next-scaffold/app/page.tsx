@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, Wrench, X } from "lucide-react";
 import Hero from "@/components/Hero";
 import ServicesGallery from "@/components/ServicesGallery";
 import ContactFooter from "@/components/ContactFooter";
@@ -83,31 +83,15 @@ export default function Home() {
           </button>
         </nav>
 
-        {/* Mobile Dropdown Drawer */}
-        <div
-          className={`md:hidden w-full max-w-7xl mt-2 rounded-2xl bg-white/95 backdrop-blur-lg shadow-xl border border-slate-200/50 overflow-hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen
-              ? "max-h-80 opacity-100"
-              : "max-h-0 opacity-0 pointer-events-none"
-          }`}
-        >
-          <div className="flex flex-col gap-1 p-5">
-            <a
-              href="#services"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-            >
-              Services
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-            >
-              Contact
-            </a>
+        {isMobileMenuOpen && (
+          <div className="absolute top-full left-0 right-0 mt-4 mx-4 p-4 bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-[2rem] shadow-2xl md:hidden z-50">
+            <div className="grid grid-cols-2 gap-3 mb-3">
+              <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-center justify-center p-6 bg-white/5 hover:bg-white/10 rounded-3xl border border-white/5 transition-all gap-3 text-white"><Wrench className="w-8 h-8 text-blue-400"/><span className="font-bold">Services</span></a>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-center justify-center p-6 bg-white/5 hover:bg-white/10 rounded-3xl border border-white/5 transition-all gap-3 text-white"><Phone className="w-8 h-8 text-blue-400"/><span className="font-bold">Contact</span></a>
+            </div>
+            <button className="w-full bg-blue-600 text-white font-bold text-lg py-4 rounded-3xl">Get a Quote</button>
           </div>
-        </div>
+        )}
       </header>
 
       <main className="relative flex-1">
