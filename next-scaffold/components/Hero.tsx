@@ -84,19 +84,19 @@ export default function Hero() {
         >
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 grid grid-cols-2 lg:grid-cols-4 gap-y-6 lg:gap-y-0 gap-x-3 md:gap-x-4 divide-x divide-white/10">
             <div className="flex flex-col items-center justify-center text-center px-4">
-              <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">24/7</span>
+              <span className="text-2xl md:text-3xl font-bold text-white [-webkit-text-stroke:1px_#0f172a] drop-shadow-lg mb-1">24/7</span>
               <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">Active Support</span>
             </div>
             <div className="flex flex-col items-center justify-center text-center px-4">
-              <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">100+</span>
+              <span className="text-2xl md:text-3xl font-bold text-white [-webkit-text-stroke:1px_#0f172a] drop-shadow-lg mb-1">100+</span>
               <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">Projects Completed</span>
             </div>
             <div className="flex flex-col items-center justify-center text-center px-4">
-              <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">Industrial</span>
+              <span className="text-2xl md:text-3xl font-bold text-white [-webkit-text-stroke:1px_#0f172a] drop-shadow-lg mb-1">Industrial</span>
               <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">&amp; Residential</span>
             </div>
             <div className="flex flex-col items-center justify-center text-center px-4">
-              <span className="text-2xl md:text-3xl font-bold text-white mb-1 drop-shadow-md">UAE</span>
+              <span className="text-2xl md:text-3xl font-bold text-white [-webkit-text-stroke:1px_#0f172a] drop-shadow-lg mb-1">UAE</span>
               <span className="text-xs md:text-sm text-slate-800 font-semibold uppercase tracking-wide">Wide Coverage</span>
             </div>
           </div>

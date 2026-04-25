@@ -18,11 +18,7 @@ export default function ContactFooter() {
       </div>
 
       <div className="bg-slate-900 pb-12 pt-8 lg:pt-16">
-        {/* Decorative glows */}
-        <div className="pointer-events-none absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[120px]" />
-        <div className="pointer-events-none absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-[100px]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="relative mx-auto max-w-7xl">
           {/* Master Grid: 5-7 column layout */}
           <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pt-16 pb-12 px-6 lg:px-12">
             {/* Left Column: Brand & Heading */}
@@ -30,7 +26,7 @@ export default function ContactFooter() {
               <div className="relative w-20 h-20 mb-6 rounded-full overflow-hidden bg-white">
                 <Image
                   src="/images/Screenshot 2026-04-22 232846.png"
-                  alt="Global Technical Logo"
+                  alt="Logo"
                   fill
                   className="object-cover"
                 />
@@ -98,7 +94,7 @@ export default function ContactFooter() {
 
             <div className="w-full max-w-7xl mx-auto py-8 text-center">
               <p className="text-slate-400 text-sm">
-                © {new Date().getFullYear()} Global Technical General Maintenance &amp; Trading. All rights reserved.
+                Â© {new Date().getFullYear()} Global Technical General Maintenance &amp; Trading. All rights reserved.
               </p>
             </div>
           </motion.footer>
