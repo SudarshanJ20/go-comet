@@ -92,7 +92,7 @@ export default function ContactFooter() {
 
             <div className="w-full max-w-7xl mx-auto py-8 text-center">
               <p className="text-slate-400 text-sm">
-                Â© {new Date().getFullYear()} GLOBAL TECHNICAL GENERAL MAINTAINANCE LLC OPC. All rights reserved.
+                 {new Date().getFullYear()} GLOBAL TECHNICAL GENERAL MAINTAINANCE LLC OPC. All rights reserved.
               </p>
             </div>
           </motion.footer>
