@@ -38,7 +38,7 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="block text-blue-400 font-bold tracking-[0.2em] uppercase text-sm md:text-base mb-4 drop-shadow-md"
           >
-            Global Technical General Maintenance &amp; Trading
+            Global Technical General Maintenance LLC OPC
           </motion.span>
 
           <motion.h1

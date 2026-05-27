@@ -48,8 +48,8 @@ export default function ContactFooter() {
                   <h3 className="text-white font-bold uppercase tracking-wider text-sm">Headquarters</h3>
                 </div>
                 <p className="text-slate-400 leading-relaxed hover:text-blue-400 transition-colors cursor-pointer">
-                  Office No. 44 Tower - 3,<br />
-                  Mazyad Mall, Abu Dhabi, U.A.E
+                  Mussafah<br />
+                  Abu Dhabi, U.A.E
                 </p>
               </div>
 
@@ -62,9 +62,8 @@ export default function ContactFooter() {
                     <h3 className="text-white font-bold uppercase tracking-wider text-sm">Call Us</h3>
                   </div>
                   <div className="flex flex-col gap-2 text-slate-400">
-                    <a href="tel:+971527172631" className="hover:text-blue-400 transition-colors">+971 52 717 2631</a>
-                    <a href="tel:+971529791619" className="hover:text-blue-400 transition-colors">+971 52 979 1619</a>
-                    <a href="tel:+971509452825" className="hover:text-blue-400 transition-colors">+971 50 945 2825</a>
+                    <a href="tel:+971 509492828" className="hover:text-blue-400 transition-colors">+971 50 949 2828</a>
+                    
                   </div>
                 </div>
 
@@ -75,8 +74,7 @@ export default function ContactFooter() {
                     <h3 className="text-white font-bold uppercase tracking-wider text-sm">Email Us</h3>
                   </div>
                   <div className="flex flex-col gap-2 text-slate-400">
-                    <a href="mailto:info@globaltechnicalgmt.com" className="hover:text-blue-400 transition-colors">info@globaltechnicalgmt.com</a>
-                    <a href="mailto:globaltechmagm@gmail.com" className="hover:text-blue-400 transition-colors">globaltechmagm@gmail.com</a>
+                    <a href="mailto:globaltechnicalgm@gmail.com" className="hover:text-blue-400 transition-colors">globaltechnicalgm@gmail.com</a>
                   </div>
                 </div>
               </div>
@@ -94,7 +92,7 @@ export default function ContactFooter() {
 
             <div className="w-full max-w-7xl mx-auto py-8 text-center">
               <p className="text-slate-400 text-sm">
-                Â© {new Date().getFullYear()} Global Technical General Maintenance &amp; Trading. All rights reserved.
+                Â© {new Date().getFullYear()} GLOBAL TECHNICAL GENERAL MAINTAINANCE LLC OPC. All rights reserved.
               </p>
             </div>
           </motion.footer>
