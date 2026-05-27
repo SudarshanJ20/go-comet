@@ -59,7 +59,7 @@ export default function Home() {
                 isScrolled ? "text-base md:text-xl" : "text-lg md:text-2xl"
               }`}
             >
-              GLOBAL TECHNICAL
+              GLOBAL TECHNICAL GENERAL MAINTAINANCE LLC OPC
             </span>
           </a>
 
