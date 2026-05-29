@@ -17,10 +17,6 @@ const bodyFont = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Global Technical General Maintenance & Trading",
   description: "Your Vision Our Expertise Delivering Excellence",
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.png",
-  },
 };
 
 export default function RootLayout({

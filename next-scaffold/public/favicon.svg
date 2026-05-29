@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <defs>
-    <clipPath id="circleClip">
-      <circle cx="50" cy="50" r="50" />
-    </clipPath>
-  </defs>
-  <rect width="100" height="100" fill="transparent" />
-  <image href="/images/Screenshot 2026-04-22 232846.png" width="100" height="100" preserveAspectRatio="xMidYMid slice" clip-path="url(#circleClip)" />
-</svg>
