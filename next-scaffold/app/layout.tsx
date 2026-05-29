@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   title: "Global Technical General Maintenance & Trading",
   description: "Your Vision Our Expertise Delivering Excellence",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.png",
   },
 };
 
