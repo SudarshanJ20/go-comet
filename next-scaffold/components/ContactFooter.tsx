@@ -75,6 +75,7 @@ export default function ContactFooter() {
                   </div>
                   <div className="flex flex-col gap-2 text-slate-400">
                     <a href="mailto:globaltechnicalgm@gmail.com" className="hover:text-blue-400 transition-colors">globaltechnicalgm@gmail.com</a>
+                     <a href="mailto:info@globaltechnicalgm.com" className="hover:text-blue-400 transition-colors">info@globaltechnicalgm.com</a>
                   </div>
                 </div>
               </div>
